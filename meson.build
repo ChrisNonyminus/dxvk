@@ -121,12 +121,15 @@ else
     lib_glfw = cpp.find_library('glfw')
     compiler_args += ['-DDXVK_WSI_GLFW']
   endif
+
+  compiler_args += ['-g3', '-fno-omit-frame-pointer']
   
   dxvk_name_prefix = 'libdxvk_'
 
   link_args += [
     '-static-libgcc',
     '-static-libstdc++',
+    '-g3'
   ]
 endif
 
